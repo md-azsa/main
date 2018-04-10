@@ -200,14 +200,14 @@ Here are some valid examples on how to use the `add` command:
 * `add r/Client n/Bradly Cooper p/91234567 e/bradlycooper@email.com t/friend t/dogwhisperer a/Blk 123, Bedok Reservoir St24` +
 
 //
-Figure 2 below shows the outcome in the command notification box after the execution of the
+Figure 3 below shows the outcome in the command notification box after the execution of the
 `add` command.
 
 .Result in command notification box after executing `add` command successfully.
 image::userguide_addCommand_image2.PNG[width="1000"]
 
 //
-Figure 3 below shows the outcomes of executing the `add` commands.
+Figure 4 below shows the outcomes of executing the `add` commands.
 
 .Result output after adding a clients Alice Peterson and Bradly Cooper
 image::userguide_addCommand_image.PNG[width="400"]
@@ -233,19 +233,19 @@ Here is an example of using the command `delete`: +
 * `delete 1` +
 
 //
-Figure 4 below shows the result of the command box notification of the program when `delete 1` is executed.
+Figure 5 below shows the result of the command box notification of the program when `delete 1` is executed.
 
 .Executing the `delete` command on index 1.
 image::userguide_deleteCommand_image.PNG[width="1000"]
 
 //
-Figure 5 below shows the status of client list before executing the `delete 1` command.
+Figure 6 below shows the status of client list before executing the `delete 1` command.
 
 .Program status before executing `delete 1` command.
 image::userguide_addCommand_image.PNG[width="400"]
 
 //
-Figure 6 below shows the result of the client list being updated upon executing the `delete 1` command.
+Figure 7 below shows the result of the client list being updated upon executing the `delete 1` command.
 
 .The client list after deleting Alice Peterson from the program.
 image::userguide_deleteCommand_image2.PNG[width="400"]
@@ -257,8 +257,6 @@ image::userguide_deleteCommand_image2.PNG[width="400"]
 
 [NOTE]
 Index provided must be a positive integer. +
-
-[NOTE]
 At least one parameter must be provided when `edit` command is called. +
 
 *Description:* Edits the details of a person specified through the index given. +
@@ -274,14 +272,14 @@ Here is an example on using the command: +
 * `edit 1 n/Mary Tan` +
 
 //
-Figure 7 below shows is the current listing before the `edit 1 n/Mary Tan` command is being executed.
+Figure 8 below shows is the current listing before the `edit 1 n/Mary Tan` command is being executed.
 
 .Client list before edit command is being executed.
 image::userguide_deleteCommand_image2.PNG[width="400"]
 
 //
 After executing the command, the following Bradly Cooper will now have a new name called Mary Tan.
-Figure 8 below shows the newly edited details of person at index 1.
+Figure 9 below shows the newly edited details of person at index 1.
 
 .Client list after the edit command is being executed.
 image::userguide_editCommand_image.PNG[width="1000"]
@@ -302,14 +300,14 @@ Here is an example on how to use the `find` command: +
 * `find jonny` +
 
 //
-Figure 9 below shows a populated client list.
+Figure 10 below shows a populated client list.
 
 .A populated client list.
 image::userguide_findCommand_image.PNG[width="400"]
 
 //
 Now let's execute the `find jonny` command. All persons with "jonny" in their name will now be listed
-like like figure 10 below.
+like like figure 11 below.
 
 .The filtered persons and/or pet containing the word "jonny".
 image::userguide_findCommand_image2.PNG[width="1000"]
@@ -337,7 +335,7 @@ Here is an example of using the command `listall`: +
 * `listall 1`  +
 
 //
-Figure 12 below shows the outcome upon executing `listall 1`.
+Figure 13 below shows the outcome upon executing `listall 1`.
 
 .The resulting output after executing `listall 1`.
 image::userguide_listallCommand_image.PNG[width="400"]
@@ -354,7 +352,7 @@ Here is an example of using the command: +
 * `list client`
 
 //
-Figure 13 below shows the outcome of executing the `list client` command.
+Figure 14 below shows the outcome of executing the `list client` command.
 
 .Resulting output upon executing the `list client` command.
 image::userguide_findCommand_image.PNG[width="400"]
@@ -370,7 +368,7 @@ Here is an example of using the command: +
 * `list vettech`
 
 //
-Figure 14 below shows the outcome of executing the `list vettech` command.
+Figure 15 below shows the outcome of executing the `list vettech` command.
 
 .Resulting output upon executing the `list vettech` command.
 image::userguide_listVettechCommand_image.PNG[width="400"]
@@ -385,7 +383,7 @@ Here's an example of using the command: +
 * `sortc`
 
 //
-Figure 15 below shows an unsorted client list.
+Figure 16 below shows an unsorted client list.
 
 .The current list of clients in the program.
 image::userguide_sortcCommand_image.PNG[width="400"]
@@ -419,7 +417,7 @@ Here are some examples on using the `addp` command: +
 * `addp c/1 pn/Scooby Doo pa/5 pg/M t/dog t/greatdane` +
 
 //
-Figure 17 below shows the outcome of executing the `addp` commands in the examples above.
+Figure 18 below shows the outcome of executing the `addp` commands in the examples above.
 
 .The pet list of the program after executing the `addp` example commands.
 image::userguide_addpCommand_image.PNG[width="400"]
@@ -431,7 +429,7 @@ image::userguide_addpCommand_image.PNG[width="400"]
 *Description:* Lists all pets in the program.
 
 //
-Figure 18 below shows the outcome upon executing `list pet`.
+Figure 19 below shows the outcome upon executing `list pet`.
 
 .Resulting output upon executing the `list pet` command.
 image::userguide_addpCommand_image.PNG[width="400"]
@@ -451,7 +449,7 @@ Here is an example on how you can use the `schedule` command to mark appointment
 * `schedule da/2018-01-02 tm/14:30 du/60 desc/Sterilize Garfield when he's feeling better.` +
 
 //
-Executing the `schedule` command will result in an appointment card being created like figure 19 below.
+Executing the `schedule` command will result in an appointment card being created like figure 20 below.
 
 .The appointment card being created after the command.
 image::userguide_scheduleCommand_image.PNG[width="1000"]
@@ -474,13 +472,13 @@ Here's an example on using the `addappttopet` command: +
 * `addappttopet appt/1 p/1` +
 
 //
-Figure 20 below shows the status of the program before executing the command given in the example above.
+Figure 21 below shows the status of the program before executing the command given in the example above.
 
 .Current state of pet and appointment status in the program.
 image::userguide_scheduleCommand_image.PNG[width="1000"]
 
 //
-Executing the command `addappttopet appt/1 p/1` will result in the following output like figure 21 below.
+Executing the command `addappttopet appt/1 p/1` will result in the following output like figure 22 below.
 Now the appointment is booked for Garfield.
 
 .The appointment card being updated after the command.
@@ -504,13 +502,13 @@ Here's an example on using the `addvettechtoappointment` command: +
 * `addvettechtoappointment vt/1 appt/1` +
 
 //
-Figure 22 below shows the current state of the program before executing the command given in the example above.
+Figure 23 below shows the current state of the program before executing the command given in the example above.
 
 .The current state of the program with 1 vet technician and 1 appointment card booked for Garfield.
 image::userguide_addvettechtoapptCommand_image.PNG[width="1000"]
 
 //
-Figure 23 below shows the outcome after executing the command.
+Figure 24 below shows the outcome after executing the command.
 
 .The resuting output after executing the command.
 image::userguide_addvettechtoapptCommand_image2.PNG[width="1000"]
@@ -528,7 +526,7 @@ Here is an example of using the command `deletep`: +
 * `deletep 1` +
 
 //
-The figure 24 below shows the results of executing the `deletep 1` command.
+The figure 25 below shows the results of executing the `deletep 1` command.
 
 .The results of exectuing the `deletep 1` command.
 image::userguide_deletepCommand_image.PNG[width="1000"]
@@ -558,13 +556,13 @@ Here is an example of using the `unschedule` command: +
 * `unschedule 1` +
 
 //
-Figure 25 below shows the current state of your program before executing `unschedule 1`.
+Figure 26 below shows the current state of your program before executing `unschedule 1`.
 
 .The current status of appointments in your program.
 image::userguide_unscheduleCommand_image.PNG[width="1000"]
 
 //
-Figure 26 below shows the outcome after executing the command.
+Figure 27 below shows the outcome after executing the command.
 
 .The resulting output after executing the `unschedule 1` command.
 image::userguide_unscheduleCommand_image2.PNG[width="1000"]
@@ -582,13 +580,13 @@ Here is an example of using the command `removeapptfrompet`: +
 * `removeapptfrompet appt/1` +
 
 //
-Figure 27 below shows the current state of your program before executing `removeapptfrompet appt/1`.
+Figure 28 below shows the current state of your program before executing `removeapptfrompet appt/1`.
 
 .Current state of program before running `removeapptfrompet` command.
 image::userguide_removeapptfrompetCommand_image.PNG[width="1000"]
 
 //
-Figure 28 below shows the outcome after executing the command.
+Figure 29 below shows the outcome after executing the command.
 
 .State of program after removing the appt from the pet.
 image::userguide_removeapptfrompetCommand_image2.PNG[width="1000"]
@@ -606,13 +604,13 @@ Here is an example of using the command `removevettechfromappt`: +
 * `removevettechfromappt 1` +
 
 //
-Figure 29 below shows the current state of program before executing `removevettechfromappt 1`.
+Figure 30 below shows the current state of program before executing `removevettechfromappt 1`.
 
 .The appointment card with assigned vet technician Rebecca Ling
 image::userguide_addvettechtoapptCommand_image2.PNG[width="1000"]
 
 //
-Calling the command will result in the output shown in figure 30 below.
+Calling the command will result in the output shown in figure 31 below.
 
 .The resulting output after calling `removevettechfromappt 1` command
 image::userguide_removevettech_image.PNG[width="1000"]
@@ -635,12 +633,12 @@ Here is an example on using the command: +
 * `reschedule 1 tm/15:30` +
 
 //
-Figure 31 below shows the current state of the program before executing `reschedule 1 tm/1530`.
+Figure 32 below shows the current state of the program before executing `reschedule 1 tm/1530`.
 
 .Current state of program before executing `reschedule`
 image::userguide_rescheduleCommand_image.PNG[width="1000"]
 
-//add
+//add to do
 .Current state of program before executing `reschedule`
 image::userguide_rescheduleCommand_image.PNG[width="1000"]
 
@@ -655,14 +653,14 @@ Here is an example of using the command: +
 * `sortp`
 
 //
-Figure 33 below shows the current state of the pet list before sorting it.
+Figure 34 below shows the current state of the pet list before sorting it.
 
 .Populated pet list view
 image::userguide_sortpCommand_image.PNG[width="500"]
 
 
 //
-Figure 34 below shows the outcome after executing `sortp`.
+Figure 35 below shows the outcome after executing `sortp`.
 
 .Sorted pet list
 image::userguide_sortpCommand_image.PNG[width="500"]
