@@ -239,7 +239,8 @@ public interface Model {
     /**
      * Updates the listed details of a client
      */
-    void updateDetailsList(Client client, ObservableList<Pet> pets, ObservableList<Appointment> appointments);
+    void updateDetailsList(Client client, ObservableList<Pet> pets,
+                           ObservableList<Appointment> appointments);
 
     /**
      * Returns the queried client

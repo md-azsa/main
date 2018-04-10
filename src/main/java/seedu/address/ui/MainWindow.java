@@ -177,9 +177,17 @@ public class MainWindow extends UiPart<Stage> {
         apptListPanelPlaceholder.getChildren().add(apptListPanel.getRoot());
     }
 
+    /**
+     * updates the listallpanel display
+     */
     void fillListAllPanel() {
-        listAllPanel = new ListAllPanel(logic.getClientDetails(), logic.getClientPetList(), logic.getClientApptList());
-        listAllPanelPlaceholder.getChildren().add(listAllPanel.getRoot());
+        if (logic.getClientDetails() != null) {
+            listAllPanel = new ListAllPanel(logic.getClientDetails(),
+                    logic.getClientPetList(), logic.getClientApptList());
+            listAllPanelPlaceholder.getChildren().add(listAllPanel.getRoot());
+        } else {
+            listAllPanelPlaceholder.getChildren().removeAll(listAllPanel.getRoot());
+        }
     }
     //@@author
 
@@ -273,7 +281,7 @@ public class MainWindow extends UiPart<Stage> {
     }
 
     @Subscribe
-    private void handleApptAvailableEvent(NewListAllDisplayAvailableEvent event) {
+    private void handleListAllDisplayAvailableEvent(NewListAllDisplayAvailableEvent event) {
         logger.info(LogsCenter.getEventHandlingLogMessage(event));
         Platform.runLater(() -> fillListAllPanel());
     }

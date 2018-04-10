@@ -99,7 +99,8 @@ public class ListAllCommand extends Command {
 ###### \java\seedu\address\model\ModelManager.java
 ``` java
     @Override
-    public void updateDetailsList(Client client, ObservableList<Pet> pets, ObservableList<Appointment> appointments) {
+    public void updateDetailsList(Client client, ObservableList<Pet> pets,
+                                  ObservableList<Appointment> appointments) {
         displayClient = client;
         displayPet = pets;
         displayAppt = appointments;
@@ -440,9 +441,17 @@ public class DateTimeCard extends UiPart<Region> {
         apptListPanelPlaceholder.getChildren().add(apptListPanel.getRoot());
     }
 
+    /**
+     * updates the listallpanel display
+     */
     void fillListAllPanel() {
-        listAllPanel = new ListAllPanel(logic.getClientDetails(), logic.getClientPetList(), logic.getClientApptList());
-        listAllPanelPlaceholder.getChildren().add(listAllPanel.getRoot());
+        if (logic.getClientDetails() != null) {
+            listAllPanel = new ListAllPanel(logic.getClientDetails(),
+                    logic.getClientPetList(), logic.getClientApptList());
+            listAllPanelPlaceholder.getChildren().add(listAllPanel.getRoot());
+        } else {
+            listAllPanelPlaceholder.getChildren().removeAll(listAllPanel.getRoot());
+        }
     }
 ```
 ###### \java\seedu\address\ui\MainWindow.java
@@ -471,7 +480,7 @@ public class DateTimeCard extends UiPart<Region> {
     }
 
     @Subscribe
-    private void handleApptAvailableEvent(NewListAllDisplayAvailableEvent event) {
+    private void handleListAllDisplayAvailableEvent(NewListAllDisplayAvailableEvent event) {
         logger.info(LogsCenter.getEventHandlingLogMessage(event));
         Platform.runLater(() -> fillListAllPanel());
     }
