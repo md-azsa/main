@@ -528,25 +528,35 @@ Here is an example on using the command: +
 //
 Figure 31 below shows the current state of the program before executing `reschedule 1 tm/1530`.
 
+.Current state of program before executing `reschedule`
+image::userguide_rescheduleCommand_image.PNG[width="1000"]
 
-
+//add
+.Current state of program before executing `reschedule`
+image::userguide_rescheduleCommand_image.PNG[width="1000"]
 
 
 ==== Sorting pets in alphabetical order: `sortp` `Since v1.4`
-Command format: `sortp` +
+*Command format:* `sortp` +
 
-The `sortp` command will sort all existing pets in the program in alphabetical ordering.
+*Description:* Sorts the pet list alphabetically.
 
-Let's take for example that your current pet listing is populated and looks like the figure below
+Here is an example of using the command: +
+
+* `sortp`
+
+//
+Figure 33 below shows the current state of the pet list before sorting it.
 
 .Populated pet list view
-image::userguide_sortpCommand_image.PNG[width="300"]
+image::userguide_sortpCommand_image.PNG[width="500"]
 
-Executing the `sortp` command will now result in the list alphabetically sorted like the figure
-below
+
+//
+Figure 34 below shows the outcome after executing `sortp`.
 
 .Sorted pet list
-image::userguide_sortpCommand_image.PNG[width="300"]
+image::userguide_sortpCommand_image.PNG[width="500"]
 
 === System Based Features
 This section explains all the commands that are available in the program.
