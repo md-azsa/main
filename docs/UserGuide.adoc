@@ -326,7 +326,7 @@ The command expects these parameters: +
 Here is an example on how to use the `find` command: +
 
 * `find jonny` +
-You used the keyword alice to find all clients or pets containing the word jonny in their names.
+You used the keyword jonny to find all clients or pets containing the word jonny in their names.
 
 
 Say, for example, that you've added more people into your program now like the figure below.
