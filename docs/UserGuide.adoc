@@ -54,6 +54,7 @@ see the version releases of the program there similar to the image below.
 .VetterAppointments program interface upon starting up.
 image::userguide_userInterface_image.PNG[width="1000"]
 
+== User Interface
 
 
 [[Features]]
@@ -69,6 +70,94 @@ image::userguide_userInterface_image.PNG[width="1000"]
 ====
 '''
 
+
+=== Autocomplete Feature
+If you're feeling lazy to type in the command type, press kbd:[Tab] on your keyboard
+and it'll do the rest for you. +
+
+[TIP]
+====
+Pressing the kbd:[Tab] key twice will provide you with suggestions of your current command input.
+====
+
+[TIP]
+====
+Pressing the kbd:[Tab] after a completed command that has a following space will provide you with the next available input parameter for the command.
+====
+
+Here is an example of using the autocomplete functionality: +
+
+* Suppose you want to type a command `addvettechtoappointment` but it is a hassle to type out the full command.
+In this scenario you can type `addv` and press kbd:[Tab] to autocomplete your `addv` input to `addvettechtoappointment` +
+
+=== System Based Commands
+This section explains commands that are based around the system. These commands are not related
+in managing your clients, staff, pets and appointments.
+
+==== Clearing all entries : `clear`
+*Command format:* `clear` +
+
+*Description:* Clears all entries from the address book. +
+
+[CAUTION]
+`clear` command will remove *all* existing clients, pets, appointments and vet technicians
+ stored in your program.
+
+ The program will be completely empty after executing the `clear` command.
+
+==== Exiting the program : `exit`
+*Command format:* `exit` +
+
+*Description:* Exits the program. +
+
+[TIP]
+Exiting the program in the middle of a command will save the state of the program.
+So there's nothing to worry about, all your data will be saved.
+
+==== Viewing help : `help`
+*Command format:* `help` +
+
+*Description:* Bring up the user guide. +
+
+Upon entering the `help` command, a User Guide manual will pop up displaying the
+available commands for you. You can always enter the `help` command if you need help
+with the program. +
+
+==== Listing entered commands : `history`
+*Command format:* `history` +
+
+*Description:* Lists all the commands that you have entered in reverse chronological order. +
+
+[TIP]
+====
+Pressing the kbd:[&uarr;] and kbd:[&darr;] arrows will display the previous and next input respectively in the command box.
+====
+
+// tag::undoredo[]
+==== Redoing the previously undone command : `redo`
+*Command format:* `redo` +
+
+*Description:* Reverses the most recent `undo` command. +
+
+[NOTE]
+====
+Redoable commands: those commands that modify the address book's content: +
+`add` `addp` `addappttopet` `sortc` `sortp` `delete` `deletep` `rmapptfrompet` `edit` `editp` `editappt` `clear`
+`schedule` `unschedule` `reschedule`
+====
+
+==== Undoing previous command : `undo`
+*Command format:* `undo` +
+
+*Description:* Restores the address book to the state before the previous _undoable_ command was executed. +
+
+[NOTE]
+====
+Undoable commands: those commands that modify the address book's content: +
+`add` `addp` `addappttopet` `sortc` `sortp` `delete` `deletep` `rmapptfrompet` `edit` `editp` `editappt` `clear`
+`schedule` `unschedule` `reschedule`
+====
+// end::undoredo[]
 
 === Client & Staff Related Commands
 This section explains and goes through the commands available to manage your
@@ -558,96 +647,6 @@ Figure 34 below shows the outcome after executing `sortp`.
 .Sorted pet list
 image::userguide_sortpCommand_image.PNG[width="500"]
 
-=== System Based Features
-This section explains all the commands that are available in the program.
-
-==== Autocomplete
-If you're feeling lazy to type in the command type, press kbd:[Tab] on your keyboard
-and it'll do the rest for you. +
-
-[TIP]
-====
-Pressing the kbd:[Tab] key twice will provide you with suggestions of your current command input.
-====
-
-[TIP]
-====
-Pressing the kbd:[Tab] after a completed command that has a following space will provide you with the next available input parameter for the command.
-====
-
-Here is an example of using the autocomplete functionality: +
-
-* Suppose you want to type a command `addvettechtoappointment` but it is a hassle to type out the full command. In this scenario you can type `addv` and press kbd:[Tab] to autocomplete your `addv` input to `addvettechtoappointment` +
-
-==== Executing a command
-Every command in VetterAppointments are executed by first entering the command type
-and its respective parameters. To execute the command, simply press the kbd:[Enter]
-key on your keyboard. +
-
-[TIP]
-Don't worry if you can't remember the parameters of a command type. Pressing kbd:[Enter]
-before a complete command sentence will display the necessary parameters required for the command.
-
-==== Clearing all entries : `clear`
-Command format: `clear` +
-
-Clears all entries from the address book. +
-
-[CAUTION]
-`clear` command will remove *all* existing clients, pets, appointments and vet technicians
- stored in your program.
-
-==== Exiting the program : `exit`
-Command format: `exit` +
-
-Exits the program. +
-
-[TIP]
-Exiting the program in the middle of a command will save the state of the program.
-So there's nothing to worry about, all your data will be saved.
-
-==== Viewing help : `help`
-Command format: `help` +
-
-Upon entering the `help` command, a User Guide manual will pop up displaying the
-available commands for you. You can always enter the `help` command if you need help
-with the program. +
-
-==== Listing entered commands : `history`
-Command format: `history` +
-
-Lists all the commands that you have entered in reverse chronological order. +
-
-[TIP]
-====
-Pressing the kbd:[&uarr;] and kbd:[&darr;] arrows will display the previous and next input respectively in the command box.
-====
-
-// tag::undoredo[]
-==== Redoing the previously undone command : `redo`
-Format: `redo` +
-
-Reverses the most recent `undo` command. +
-
-[NOTE]
-====
-Redoable commands: those commands that modify the address book's content: +
-`add` `addp` `addappttopet` `sortc` `sortp` `delete` `deletep` `rmapptfrompet` `edit` `editp` `editappt` `clear`
-`schedule` `unschedule`
-====
-
-==== Undoing previous command : `undo`
-Command format: `undo` +
-
-Restores the address book to the state before the previous _undoable_ command was executed. +
-
-[NOTE]
-====
-Undoable commands: those commands that modify the address book's content: +
-`add` `addp` `addappttopet` `sortc` `sortp` `delete` `deletep` `rmapptfrompet` `edit` `editp` `editappt` `clear`
-`schedule` `unschedule`
-====
-// end::undoredo[]
 
 
 
