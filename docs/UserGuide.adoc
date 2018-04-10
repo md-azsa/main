@@ -56,6 +56,26 @@ image::userguide_userInterface_image.PNG[width="1000"]
 
 == User Interface
 
+Figure 2 below shows the interface of VetterAppointments. This section will help you understand
+the different sections of VetterAppointments.
+
+.User interface of VetterAppointments program.
+image::userguide_interfaceWalkthrough_image.PNG[width="1000"]
+
+*Sections of the interface:* +
+
+. *Client/Pet/Vet Tech List Panel:* +
+Displays all clients/pets/vet technicians in the program.
+. *Command Box:* +
+Takes in the input by the user.
+. *Command Box Notification:* +
+Notifies the command feedback to the user.
+. *Appointment Panel:* +
+Displays all appoinments scheduled in the program.
+. *List All Panel:* +
+Displays all information of a specified client.
+
+
 
 [[Features]]
 == Features
