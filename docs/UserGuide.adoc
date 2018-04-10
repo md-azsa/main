@@ -361,7 +361,19 @@ The command expects this parameter when called: +
 Here is an example of using the command `listall`: +
 
 * `listall 1`  +
-Suppose there is only one client in the program and is stored at index 1. This command will then display all the pets and appointments of the person at index 1. +
+Suppose there is only one client in the program and is stored at index 1.
+This command will then display all the pets and appointments of the person at index 1. +
+
+Say for example that your only client is Mary Tan from before and that her pet Garfield (don't worry
+about how to add a pet or appointment to your client for now, we'll go through that later) has an
+appointment. Executing `listall 1` will list the details of all her pets and appointments like the figure
+below.
+
+.The resulting output after executing `listall 1`.
+image::userguide_listallCommand_image.PNG[width="700"]
+
+Again, don't worry if you're unsure about the steps to add an appointment or a pet, it will be thoroughly
+explained as you step through the user guide.
 
 
 ==== Listing all clients: `list client` `Since v1.2`
