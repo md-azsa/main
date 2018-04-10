@@ -101,7 +101,7 @@ image::userguide_addCommand_image2.PNG[width="1000"]
 Figure 3 below shows the outcomes of executing the `add` commands.
 
 .Result output after adding a clients Alice Peterson and Bradly Cooper
-image::userguide_addCommand_image.PNG[width="500"]
+image::userguide_addCommand_image.PNG[width="400"]
 
 
 
@@ -132,13 +132,13 @@ image::userguide_deleteCommand_image.PNG[width="1000"]
 Figure 5 below shows the status of client list before executing the `delete 1` command.
 
 .Program status before executing `delete 1` command.
-image::userguide_addCommand_image.PNG[width="500"]
+image::userguide_addCommand_image.PNG[width="400"]
 
 //
 Figure 6 below shows the result of the client list being updated upon executing the `delete 1` command.
 
 .The client list after deleting Alice Peterson from the program.
-image::userguide_deleteCommand_image2.PNG[width="500"]
+image::userguide_deleteCommand_image2.PNG[width="400"]
 
 
 
@@ -166,7 +166,7 @@ Here is an example on using the command: +
 Figure 7 below shows is the current listing before the `edit 1 n/Mary Tan` command is being executed.
 
 .Client list before edit command is being executed.
-image::userguide_deleteCommand_image2.PNG[width="500"]
+image::userguide_deleteCommand_image2.PNG[width="400"]
 
 //
 After executing the command, the following Bradly Cooper will now have a new name called Mary Tan.
@@ -193,7 +193,7 @@ Here is an example on how to use the `find` command: +
 Figure 9 below shows a populated client list.
 
 .A populated client list.
-image::userguide_findCommand_image.PNG[width="500"]
+image::userguide_findCommand_image.PNG[width="400"]
 
 //
 Now let's execute the `find jonny` command. All persons with "jonny" in their name will now be listed
@@ -227,7 +227,7 @@ Here is an example of using the command `listall`: +
 Figure 12 below shows the outcome upon executing `listall 1`.
 
 .The resulting output after executing `listall 1`.
-image::userguide_listallCommand_image.PNG[width="500"]
+image::userguide_listallCommand_image.PNG[width="400"]
 
 
 
@@ -244,7 +244,7 @@ Here is an example of using the command: +
 Figure 13 below shows the outcome of executing the `list client` command.
 
 .Resulting output upon executing the `list client` command.
-image::userguide_findCommand_image.PNG[width="500"]
+image::userguide_findCommand_image.PNG[width="400"]
 
 
 ==== Listing all vet technicians: `list vettech` `Since v1.2`
@@ -260,7 +260,7 @@ Here is an example of using the command: +
 Figure 14 below shows the outcome of executing the `list vettech` command.
 
 .Resulting output upon executing the `list vettech` command.
-image::userguide_listVettechCommand_image.PNG[width="500"]
+image::userguide_listVettechCommand_image.PNG[width="400"]
 
 ==== Sorting clients in alphabetical order: `sortc` `Since v1.4`
 Command format: `sortc` +
@@ -275,13 +275,13 @@ Here's an example of using the command: +
 Figure 15 below shows an unsorted client list.
 
 .The current list of clients in the program.
-image::userguide_sortcCommand_image.PNG[width="500"]
+image::userguide_sortcCommand_image.PNG[width="400"]
 
 //
 After executing the `sortc` command, the list will now be sorted alphabetically like the figure 16 below.
 
 .The sorted client list in the program.
-image::userguide_sortcCommand_image2.PNG[width="500"]
+image::userguide_sortcCommand_image2.PNG[width="400"]
 
 
 
