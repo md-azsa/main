@@ -71,17 +71,17 @@ image::userguide_userInterface_image.PNG[width="1000"]
 
 
 === Client & Staff Related Commands
-This section explains and goes through the commands  available to manage your
+This section explains and goes through the commands available to manage your
 client and staff in the clinic.
 
 
 ==== Adding a person: `add` `Since v1.1`
-Command format: `add r/ROLE n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]...` +
-
-Description: Adds a new person to the program. +
+*Command format:* `add r/ROLE n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]...` +
 
 [NOTE]
 A person's role can only either be a client or technician. +
+
+*Description:* Adds a new person to the program. +
 
 
 Here are some valid examples on how to use the `add` command:
@@ -106,17 +106,18 @@ image::userguide_addCommand_image.PNG[width="400"]
 
 
 ==== Removing a client or vet technician: `delete` `Since v1.1`
-Command format: `delete INDEX` +
+*Command format:* `delete INDEX` +
 
-Description: Deletes a person in the program according to the index provided. +
+[NOTE]
+The index must be a positive integer. +
+
+*Description:* Deletes a person in the program according to the index provided. +
 
 [NOTE]
 The `delete` command only deletes the person on the currently viewed person listing.
 `delete` command deletes a client when viewing the Client list. Likewise it deletes
 the vet technician when viewing the Vet Tech list. +
 
-[NOTE]
-The index must be a positive integer. +
 
 Here is an example of using the command `delete`: +
 
@@ -143,20 +144,21 @@ image::userguide_deleteCommand_image2.PNG[width="400"]
 
 
 ==== Editing a client or vet technician's details : `edit` `Since v1.1`
-Command format: `edit INDEX [r/ROLE] [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [t/TAG]...` +
-
-Description: Edits the details of a person specified through the index given. +
-
-[NOTE]
-The `edit` command only deletes the person on the currently viewed person listing.
-`edit` command deletes a client when viewing the Client list. Likewise it deletes
-the vet technician when viewing the Vet Tech list. +
+*Command format:* `edit INDEX [r/ROLE] [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [t/TAG]...` +
 
 [NOTE]
 Index provided must be a positive integer. +
 
 [NOTE]
 At least one parameter must be provided when `edit` command is called. +
+
+*Description:* Edits the details of a person specified through the index given. +
+
+[NOTE]
+The `edit` command only deletes the person on the currently viewed person listing.
+`edit` command deletes a client when viewing the Client list. Likewise it deletes
+the vet technician when viewing the Vet Tech list. +
+
 
 Here is an example on using the command: +
 
@@ -178,12 +180,13 @@ image::userguide_editCommand_image.PNG[width="1000"]
 
 
 ==== Finding by name: `find` `Since v1.3`
-Command format: `find KEYWORD` +
-
-Description: Finds all existing clients or vet technician containing the keyword provided.
+*Command format:* `find KEYWORD` +
 
 [NOTE]
 The `find` command is case-insensitive. +
+
+*Description:* Finds all existing clients or vet technician containing the keyword provided.
+
 
 Here is an example on how to use the `find` command: +
 
@@ -212,12 +215,13 @@ image::userguide_findCommand_image3.PNG[width="1000"]
 
 
 ==== Listing all information: `listall` `Since v1.5`
-Command format: `listall INDEX` +
-
-Description: Lists all the details of a client. +
+*Command format:* `listall INDEX` +
 
 [NOTE]
 Index must be a positive integer. +
+
+*Description:* Lists all the details of a client. +
+
 
 Here is an example of using the command `listall`: +
 
@@ -232,9 +236,9 @@ image::userguide_listallCommand_image.PNG[width="400"]
 
 
 ==== Listing all clients: `list client` `Since v1.2`
-Command format: `list client` +
+*Command format:* `list client` +
 
-Description: Lists all clients in the program. +
+*Description:* Lists all clients in the program. +
 
 Here is an example of using the command: +
 
@@ -248,9 +252,9 @@ image::userguide_findCommand_image.PNG[width="400"]
 
 
 ==== Listing all vet technicians: `list vettech` `Since v1.2`
-Command format: `list vettech` +
+*Command format:* `list vettech` +
 
-Description: Lists all vet technicians in the program. +
+*Description:* Lists all vet technicians in the program. +
 
 Here is an example of using the command: +
 
@@ -263,9 +267,9 @@ Figure 14 below shows the outcome of executing the `list vettech` command.
 image::userguide_listVettechCommand_image.PNG[width="400"]
 
 ==== Sorting clients in alphabetical order: `sortc` `Since v1.4`
-Command format: `sortc` +
+*Command format:* `sortc` +
 
-Description: Sorts the client list alphabetically. +
+*Description:* Sorts the client list alphabetically. +
 
 Here's an example of using the command: +
 
