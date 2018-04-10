@@ -290,361 +290,247 @@ image::userguide_sortcCommand_image2.PNG[width="400"]
 
 
 === Pets & Appointment Related Commands
-This section explains and goes through in depth, the commands and features available
-that are directly related to your pets and appointments. You can head down to the
-<<Pets & Appointments Summarized Table>> to view the summarized table of all the available
-commands.
+This section explains and goes through in depth, the commands available
+that are used to manage your pets and appointments.
+
 
 ==== Adding a pet: `addp` `Since v1.2`
-Command format: `addp c/CLIENT_INDEX pn/PET_NAME pa/PET_AGE pg/PET_GENDER t/PET_TAG...` +
+*Command format:* `addp c/CLIENT_INDEX pn/PET_NAME pa/PET_AGE pg/PET_GENDER t/PET_TAG...` +
 
-The `addp` command adds a pet to the program with its details.
-The command expects these parameters when adding a pet to a client: +
+[NOTE]
+The client index must be a positive integer
 
-[horizontal]
-*CLIENT INDEX*::
-The index of the client to add the pet to must be supplied the user. +
+*Description:* Adds a pet to a client. +
 
-*PET NAME*::
-The name of the pet to be added to a client must be supplied by the user. +
 
-*PET AGE*::
-The age of the pet must be supplied by the user. It must contain only numbers. +
-
-*PET GENDER*::
-The gender of the pet must be supplied by the user. It can only be male or female. +
-
-*PET TAGS*::
-The pet tags should be supplied by the user.
-Pet tags will represent the species and breed of the pet.
-
-Here are some valid examples on how to use the `addp` command: +
+Here are some examples on using the `addp` command: +
 
 * `addp c/1 pn/Garfield pa/10 pg/M t/cat t/tabby` +
-Here, you choose to add Garfield to client of index 1 of age 10 and is a male. Garfield is a cat and a tabby.
-Garfield is also owned by the client at index 1 +
 
 * `addp c/1 pn/Scooby Doo pa/5 pg/M t/dog t/greatdane` +
-Here you choose to add another pet called Scooby to client of index 1 Doo of age 5 and is a male.
-Scooby Doo is a dog and a great dane. So now the client of index 1 owns both Scooby Doo and Garfield. +
 
-Let's say we execute the commands listed in the examples above to our current client list like
-the figure below.
-
-.The client list in the program.
-image::userguide_sortcCommand_image2.PNG[width="300"]
-
-Executing the commands will add pets Garfield and Scooby Doo to Anna Lee. The figure below shows
-the resulting output after executing the commands `addp c/1 pn/Garfield pa/10 pg/M t/cat t/tabby`
-and `addp c/1 pn/Scooby Doo pa/5 pg/M t/dog t/greatdane`.
+//
+Figure 17 below shows the outcome of executing the `addp` commands in the examples above.
 
 .The pet list of the program after executing the `addp` example commands.
-image::userguide_addpCommand_image.PNG[width="300"]
+image::userguide_addpCommand_image.PNG[width="400"]
+
 
 ==== Listing all pets: `list pet` `Since v1.2`
-Command format: `list pet` +
+*Command format:* `list pet` +
 
-The `list pet` command will display all pets that are stored in the program.
-It automatically switches to the pet view tab so you can view all your pets at a glance. +
+*Description:* Lists all pets in the program.
 
-Here's the resulting output if you executed the command. Notice how it switches to the
-pet list tab below. +
+//
+Figure 18 below shows the outcome upon executing `list pet`.
 
 .Resulting output upon executing the `list pet` command.
-image::userguide_addpCommand_image.PNG[width="300"]
+image::userguide_addpCommand_image.PNG[width="400"]
 
 ==== Scheduling an appointment : `schedule` `Since v1.4`
-Command format: schedule da/DATE tm/TIME du/DURATION desc/DESCRIPTION +
+*Command format:* schedule da/DATE tm/TIME du/DURATION desc/DESCRIPTION +
 
-Schedules an appointment by specifying the date, time, duration and description.
+[NOTE]
+Date format: YYYY-MM-DD +
+Time format: HH:MM
 
-[horizontal]
-*DATE*::
-The date of the appointment in YYYY-MM-DD format. This needs to be supplied by the user.
+*Description:* Schedules an appointment. +
 
-*TIME*::
-The time of the appointment in HH:MM format. This needs to be supplied by the user.
-
-*DURATION*::
-The duration of the appointment, or how long it is in minutes. This needs to be supplied by the user.
-
-*DESCRIPTION*::
-A brief information or description of the appointment. This needs to be supplied by the user.
-
-[TIP]
-Date is in the format "YYYY-MM-DD" and the year "YYYY" must be later than the current year "2018".
-
-[TIP]
-Time adapts the 24-hour format from 00:00 to 23:59.
-[TIP]
-Duration can be any valid integer numbers from 15 to 120.
 
 Here is an example on how you can use the `schedule` command to mark appointment dates: +
 
 * `schedule da/2018-01-02 tm/14:30 du/60 desc/Sterilize Garfield when he's feeling better.` +
-You've just made an appointment on 2018-01-02 at 1430 hours. It will last for 60 minutes and
-dedicated to sterilizing Garfield. +
 
-Executing the `schedule` command will result in an appointment card being created like the figure below.
+//
+Executing the `schedule` command will result in an appointment card being created like figure 19 below.
 
 .The appointment card being created after the command.
 image::userguide_scheduleCommand_image.PNG[width="1000"]
 
-[TIP]
-VetterAppointments will make sure you have breaks for your meals. This means that you cannot
-schedule appointments that are too close with one another.
-[TIP]
-VetterAppointments will also make sure you don't accidentally book the same time slot for
-an appointment. Therefore you'll never have a clash in schedules. Don't worry, we'll inform
-you if there are any conflicts in your scheduling.
-[NOTE]
-You can execute the `addappttopet` command after creating an appointment.
 
 
 ==== Adding an appointment to a pet: `addappttopet` `Since v1.3`
-Command format: `addappttopet appt/APPOINTMENT_INDEX p/PET_INDEX` +
+*Command format:* `addappttopet appt/APPOINTMENT_INDEX p/PET_INDEX` +
 
-The `addapptto` command adds an appointment to a pet in the program. +
-The command expects these parameters when adding an appointment to a pet: +
+[NOTE]
+Both appointment and pet indexes must be a positive integer.
 
-[horizontal]
-*APPOINTMENT INDEX*:: The index of the appointment in the list. It must be supplied by the user. +
-*PET INDEX*:: The index of the pet in the list. It must be supplied by the user. +
+*Description:* Adds an appointment to a specified pet.
+
+[NOTE]
+You need to schedule an appointment first before executing `addappttopet` command.
 
 Here's an example on using the `addappttopet` command: +
 
 * `addappttopet appt/1 p/1` +
-Here, we're adding an appointment of index 1 in the appointment card listing to pet of index 1 in
-the pet listing.
 
-Say your program has 2 pets and 1 appointment being created like the figure below.
+//
+Figure 20 below shows the status of the program before executing the command given in the example above.
 
 .Current state of pet and appointment status in the program.
 image::userguide_scheduleCommand_image.PNG[width="1000"]
 
-Executing the command `addappttopet appt/1 p/1` will result in the following output like the figure below.
+//
+Executing the command `addappttopet appt/1 p/1` will result in the following output like figure 21 below.
 Now the appointment is booked for Garfield.
 
 .The appointment card being updated after the command.
-image::userguide_addappttopetCommand_image.PNG[width="400"]
-
-[NOTE]
-You need to schedule an appointment first before adding it to a pet. See <<Scheduling an appointment : `schedule`>>
+image::userguide_addappttopetCommand_image.PNG[width="1000"]
 
 
 ==== Adding a vet technician to a appointment: `addvettechtoappointment` `Since v1.4`
-Command format: `addvettechtoappointment vt/VETTECH_INDEX appt/APPOINTMENT_INDEX` +
+*Command format:* `addvettechtoappointment vt/VETTECH_INDEX appt/APPOINTMENT_INDEX` +
 
-The `addvettechtoappointment` command adds a vet tech to an appointment in the program. +
-The command expects these parameters when adding a vet technician to an appointment: +
+[NOTE]
+Both vettech and appointment index must be a positive integer.
 
-[horizontal]
-*VETTECH INDEX*:: The index of the vet technician in the list. It must be supplied by the user. +
-*APPOINTMENT INDEX*:: The index of the appointment in the list. It must be supplied by the user. +
+*Description:* Adds a vet tecnician to a scheduled appointment. +
+
+[NOTE]
+An appointment needs to be scheduled first before assigning a vet technician to it.
+
 
 Here's an example on using the `addvettechtoappointment` command: +
 
 * `addvettechtoappointment vt/1 appt/1` +
-This will add the first vet technician in the vet technician list will be added to the first appointment in the appointment list.
-Once this is executed, the appointment will now have the appointed vet technician. +
 
-Say your you have 1 vet technician in your list and an appointment created for Garfield like
-the figure below.
+//
+Figure 22 below shows the current state of the program before executing the command given in the example above.
 
 .The current state of the program with 1 vet technician and 1 appointment card booked for Garfield.
-image::userguide_addvettechtoapptCommand_image.PNG[width="400"]
+image::userguide_addvettechtoapptCommand_image.PNG[width="1000"]
 
-After executing the `addvettechtoappointment vt/1 appt/1` command will result in adding
-Rebecca Ling as a vet technician for that appointment. The figure below shows the result output after
-the command.
+//
+Figure 23 below shows the outcome after executing the command.
 
 .The resuting output after executing the command.
-image::userguide_addvettechtoapptCommand_image2.PNG[width="400"]
-
-
-[NOTE]
-You need to schedule an appointment first before assigning a vet techician to it.
+image::userguide_addvettechtoapptCommand_image2.PNG[width="1000"]
 
 ==== Removing a pet: `deletep` `Since v1.2`
-Command format: `deletep INDEX` +
+*Command format:* `deletep INDEX` +
 
-The `deletep` command will remove a pet from the program. Executing this command will remove
-the pet from your program. The command expects this parameter when called: +
+[NOTE]
+Index must be a positive integer.
 
-[horizontal]
-*INDEX*:: The client's index in the program. This must be supplied by the user.
+*Description:* Removes the specified pet from the program. +
 
 Here is an example of using the command `deletep`: +
 
 * `deletep 1` +
-Suppose there is only one pet in the program called Garfield,
-Garfield will be entirely removed from your program.
 
-The figure below shows the results of executing the `deletep 1` command.
+//
+The figure 24 below shows the results of executing the `deletep 1` command.
 
 .The results of exectuing the `deletep 1` command.
-image::userguide_deletepCommand_image.PNG[width="500"]
+image::userguide_deletepCommand_image.PNG[width="1000"]
 
 
 ==== Editing a pet's appointment: `editappt` `coming v2.0`
-Command format: `editappt n/CLIENT_NAME pn/PET_NAME [date/DATE (DD.MM.YYYY)] [time/TIME (HHMM)] [vettech/VET_TECHNICIAN_NAME] [cmt/COMMENTS]` +
+*Command format:* `editappt n/CLIENT_NAME pn/PET_NAME [date/DATE (DD.MM.YYYY)] [time/TIME (HHMM)] [vettech/VET_TECHNICIAN_NAME] [cmt/COMMENTS]` +
 
-The `editappt` command edits the appointment date and detail of an existing pet.
-The command expects these parameters when executing: +
-
-[horizontal]
-*CLIENT NAME*:: The name of the pet's owner. This must be supplied by the user.
-*PET NAME*:: The name of the pet. This must be supplied by the user.
-*DATE*:: The new date of the new appointment in DD.MM.YYYY format. It need not be supplied by the user.
-*TIME*:: The time of the new appointment in HHMM format. It need not be supplied by the user.
-*VET TECHNICIAN*:: The name of the new vet technician in-charged of the new appointment. It need not be supplied by the user.
-*COMMENTS*:: The new comments for the appointment. It need not be supplied by the user.
+*Description:* Edits a specified appointment. +
 
 
 ==== Editing a pet's details: `editp` `coming v2.0`
-Command format: `editp INDEX [pn/PET_NAME] [pa/PET_AGE] [pg/PET_GENDER] [t/PET_TAGS]...` +
+*Command format:* `editp INDEX [pn/PET_NAME] [pa/PET_AGE] [pg/PET_GENDER] [t/PET_TAGS]...` +
 
-Similar to the `edit` command, the `editp` command amends the details of a specified pet of the specified owner. The command expects these parameters when executing: +
+*Description:* Edits a specified pet's details. +
 
-[horizontal]
-*INDEX*::
-The index of the pet that the user wants to amend. This must be supplied by the user.
-*PET NAME*::
-The new pet name the user wants to change. It need not be supplied by the user.
-*PET AGE*::
-The new pet age the user wants to change. It need not be supplied by the user.
-*PET GENDER*::
-The new pet gender the user wants to change. It need not be supplied by the user.
-*PET TAGS*::
-(OPTIONAL)
-
-Here is an example of using the `editp` command: +
-
-* `editp 1 pn/Jerry pa/2 pg/M` +
-Here you choose to edit the pet of the first index and changed the existing name, age and gender to Jerry, 2 and male.
 
 ==== Unscheduling an appointment: `unschedule` `since v1.5`
-Command format: `unschedule INDEX` +
+*Command format:* `unschedule INDEX` +
+[NOTE]
+Index must be a positive integer.
 
-The `unschedule` command removes the appointment from the program.
-It requires the index of the appointment in the appointment listing.
-The command expects these parameters: +
-
-[horizontal]
-*INDEX*::
-The appointment index to be removed based on the appointment listing. This needs to be supplied by the
-user. +
+*Description:* Removes the specified appointment from the program. +
 
 Here is an example of using the `unschedule` command: +
 
 * `unschedule 1` +
-When this command is executed, the appointment at the first index is removed.
 
-The figure below shows the current state of your program as an exammple.
+//
+Figure 25 below shows the current state of your program before executing `unschedule 1`.
 
 .The current status of appointments in your program.
-image::userguide_unscheduleCommand_image.PNG[width="500"]
+image::userguide_unscheduleCommand_image.PNG[width="1000"]
 
-After executing the `unschedule 1` command, the first appointment on 02 January 2018 will be removed.
-The figure below shows the resulting output upon executing the command.
+//
+Figure 26 below shows the outcome after executing the command.
 
 .The resulting output after executing the `unschedule 1` command.
-image::userguide_unscheduleCommand_image2.PNG[width="500"]
+image::userguide_unscheduleCommand_image2.PNG[width="1000"]
 
 ==== Removing an appointment from a pet: `removeapptfrompet` `since v1.3`
 Command format: `removeapptfrompet appt/APPOINTMENT_INDEX` +
 
-The `removeapptfrompet` command removes an associated appointment from a pet.
-The command requires the index of the appointment in the appointment list.
-The command expects these parameters: +
+[NOTE]
+Appointment index must be a positive integer.
 
-[horizontal]
-*APPOINTMENT INDEX*::
-The appointment to be removed based on the appointment listing. This needs to be supplied by
-the user. +
+*Description:* Removes the specified appointment tagged to a pet. +
 
-Here is an exammple of using the command `removeapptfrompet`: +
+Here is an example of using the command `removeapptfrompet`: +
 
 * `removeapptfrompet appt/1` +
-When this command is executed, the appointment will be removed from the pet that is associated to it.
 
-[NOTE]
-The command does not remove the appointment itself, rather, the pet associated with the appointment.
-So don't worry, you don't have to reschedule the appointment.
+//
+Figure 27 below shows the current state of your program before executing `removeapptfrompet appt/1`.
+
+.Current state of program before running `removeapptfrompet` command.
+image::userguide_removeapptfrompetCommand_image.PNG[width="1000"]
+
+//
+Figure 28 below shows the outcome after executing the command.
+
+.State of program after removing the appt from the pet.
+image::userguide_removeapptfrompetCommand_image2.PNG[width="1000"]
 
 ==== Removing a vet technician from an appointment: `removevettechfromappt` `Since v1.4`
-Command format: `removevettechfromappt INDEX` +
+*Command format:* `removevettechfromappt INDEX` +
 
-The `removevettechfromappt` command removes a vet tech from an appointment in the program. +
-The command expects the following parameter when removing a vet technician from an appointment: +
+[NOTE]
+Index must be a positive integer.
 
-[horizontal]
-*INDEX*:: The appointment index on the appointment list list displayed in the program. This must be supplied by the user.
+*Description:* Removes the assigned vet technicians from the specified appointment. +
 
 Here is an example of using the command `removevettechfromappt`: +
 
 * `removevettechfromappt 1` +
-Suppose there is an appointment with index 1 on the appointment list with a vet technician currently assigned to it.
-This command will remove the assigned vet technician from the appointment with the index 1
 
-The figure below shows the appointment card with a vet technician called Rebecca Link.
+//
+Figure 29 below shows the current state of program before executing `removevettechfromappt 1`.
 
 .The appointment card with assigned vet technician Rebecca Ling
-image::userguide_addvettechtoapptCommand_image2.PNG[width="400"]
+image::userguide_addvettechtoapptCommand_image2.PNG[width="1000"]
 
-Calling the command will result in the output below
+//
+Calling the command will result in the output shown in figure 30 below.
 
 .The resulting output after calling `removevettechfromappt 1` command
-image::userguide_removevettech_image.PNG[width="400"]
+image::userguide_removevettech_image.PNG[width="1000"]
 
 
 
 ==== Rescheduling an appointment : `reschedule` `Since v1.4`
-Command format: `reschedule INDEX [da/DATE] [tm/TIME] [du/DURATION] [DESC/DESCRIPTION] +
-
-The `reschedule` command reschedules the existing appointment to another date or time. This command is also
-able to vary the duration or amend the description of existing appointments.
-The details of the specified appointments's index will be replaced with the supplied parameters from the user.
-The existing details will be overriden. The command expects these parameters: +
-
-[horizontal]
-*INDEX*::
-The index of the appointment that the user wants to reschedule. It must be supplied by the user.
-*DATE*::
-The new date of the appointment that the user wants. It need not be supplied by the user.
-*TIME*::
-The new time of the appointment that the user wants. It need not be supplied by the user.
-*DURATION*::
-The new duration of the appointment that the user wants. It need not be supplied by the user.
-*DESCRIPTION*::
-The new description of the appointment that the user wants. It need not be supplied by the user.
-
-[TIP]
-The more detailed information for each parameter can be found in section 3.3.3.
-
-The `reschedule` command is very similar to the `schedule` command.
-Here are some examples on using the command: +
-
-* `reschedule 1 tm/15:30` +
-You choose to only reschedule the time of appointment specified by index 1 [da/2018-01-02 tm/14:30 du/60 desc/Sterilize Garfield when he's feeling better.]
-from 14:30 to 15:30 and other details remain unchanged. +
-
-Executing the `reschedule` command will result in an appointment card being updated like the figure below. +
-
-.The appointment card being updated after the command.
-image::userguide_reschedule1.PNG[width="1000"]
-
-* `reschedule 1 da/2018-01-03 du/90` +
-You choose to reschedule the date and duration of the appointment specified at index 1 [da/2018-01-02 tm/15:30 du/60 desc/Sterilize Garfield when he's feeling better.]
-to the next day and lasts 30 minutes longer. +
-
-Executing the `reschedule` command will result in an appointment card being updated like the figure below. +
-
-.The appointment card being updated after the command.
-image::userguide_reschedule2.PNG[width="1000"]
+*Command format:* `reschedule INDEX [da/DATE] [tm/TIME] [du/DURATION] [desc/DESCRIPTION] +
 
 [NOTE]
-You need to provide at least one change to any filed of an existing appointment.
+Index provided must be a positive integer. +
+
+[NOTE]
+At least one parameter must be provided. +
+
+*Description:* Reschedules the specified appointment.
+
+Here is an example on using the command: +
+
+* `reschedule 1 tm/15:30` +
+
+//
+Figure 31 below shows the current state of the program before executing `reschedule 1 tm/1530`.
+
+
+
+
 
 ==== Sorting pets in alphabetical order: `sortp` `Since v1.4`
 Command format: `sortp` +
