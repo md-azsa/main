@@ -22,6 +22,8 @@ import seedu.address.model.appointment.Duration;
 import seedu.address.model.appointment.Time;
 import seedu.address.model.appointment.exceptions.AppointmentNotFoundException;
 import seedu.address.model.appointment.exceptions.DuplicateAppointmentException;
+import seedu.address.model.association.ClientOwnPet;
+import seedu.address.model.vettechnician.VetTechnician;
 
 //@@author Godxin-functional
 /**
@@ -107,8 +109,13 @@ public class RescheduleCommand extends UndoableCommand {
                 appointmentToReschedule.getDuration());
         Description updatedDescription = rescheduleAppointmentDescriptor.getDescription().orElse(
                 appointmentToReschedule.getDescription());
+        ClientOwnPet updatedClientOwnPet = appointmentToReschedule.getClientOwnPet();
+        Optional<VetTechnician> updatedVetTech = appointmentToReschedule.getOptionalVetTechnician();
 
-        return new Appointment(updatedDate, updatedTime, updatedDuration, updatedDescription);
+        Appointment newAppointment = new Appointment(updatedDate, updatedTime, updatedDuration, updatedDescription);
+        newAppointment.setClientOwnPet(updatedClientOwnPet);
+        newAppointment.setOptionalVetTech(updatedVetTech);
+        return new Appointment(newAppointment);
     }
 
     @Override
